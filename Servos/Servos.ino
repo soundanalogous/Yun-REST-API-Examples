@@ -15,7 +15,7 @@
   You can then go to http://arduino.local/sd/Servos
   to see the output of this sketch.  
 
-  created 14 July 2013
+  created 14 December 2013
   by Jeff Hoefs
   */
   
