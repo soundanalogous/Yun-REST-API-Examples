@@ -8,7 +8,7 @@ $(document).ready(function () {
   function setDigitalPin(pin, value) {
     var request = $.ajax({
       type: "POST",
-      url: "/arduino/digital/" + pin + "/" + value,
+      url: "/arduino/digital/" + pin + "/" + value
     });
 
     request.done(function (msg) {
