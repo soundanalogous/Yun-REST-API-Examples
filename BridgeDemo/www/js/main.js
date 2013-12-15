@@ -3,11 +3,20 @@ $(document).ready(function () {
   var $onBtn = $("#on");
   var $offBtn = $("#off");
 
+  // POST data needs to be included in the url string since bridge
+  // does not currently parse the request body for data
   function setDigitalPin(pin, value) {
-    $.ajax({
+    var request = $.ajax({
       type: "POST",
       url: "/arduino/digital/" + pin + "/" + value,
-      dataType: "json"
+    });
+
+    request.done(function (msg) {
+      console.log(msg);
+    });
+
+    request.fail(function (jqXHR, textStatus) {
+      console.log("Request failed: " + textStatus);
     });
   }
 
